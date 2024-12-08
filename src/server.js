@@ -10,7 +10,9 @@ const mongoose = require('./db/db');
 dotenv.config(); // Carregar variáveis do ambiente
 
 const app = express();
-app.use(cors()); // Habilitando CORS para todas as rotas
+app.use(cors({
+    origin: '*'
+}));
 app.use(bodyParser.json());
 
 app.use('/api/appointments', appointmentRoutes);
